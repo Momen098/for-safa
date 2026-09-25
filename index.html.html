@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#11131a" />
+  <title>رسالة ليكي ❤️</title>
+  <style>
+    :root{
+      --bg:#101218;
+      --card:#171a22;
+      --text:#f7f3ee;
+      --muted:#b9b3ad;
+      --rose:#ff7d96;
+      --rose2:#ffb3c1;
+      --gold:#f0c98b;
+      --line:rgba(255,255,255,.16);
+      --shadow:0 18px 60px rgba(0,0,0,.38);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      min-height:100vh;
+      font-family: Tahoma, Arial, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 20% 10%, rgba(255,125,150,.12), transparent 30%),
+        radial-gradient(circle at 80% 85%, rgba(240,201,139,.10), transparent 28%),
+        var(--bg);
+      color:var(--text);
+      overflow-x:hidden;
+    }
+    .noise{
+      position:fixed; inset:0; pointer-events:none; opacity:.08;
+      background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.25'/%3E%3C/svg%3E");
+      z-index:1;
+    }
+    .strings{
+      position:fixed; inset:0; pointer-events:none; z-index:0; overflow:hidden;
+    }
+    .string{
+      position:absolute; top:-15vh; width:1px; height:58vh;
+      background:linear-gradient(to bottom, transparent, rgba(255,255,255,.22), transparent);
+      transform-origin:top center;
+      animation:sway 5s ease-in-out infinite alternate;
+    }
+    .string::after{
+      content:"";
+      position:absolute; bottom:-8px; left:50%;
+      width:16px; height:16px; transform:translateX(-50%) rotate(45deg);
+      background:linear-gradient(135deg,var(--rose),var(--rose2));
+      border-radius:4px 10px 4px 10px;
+      box-shadow:0 0 20px rgba(255,125,150,.28);
+    }
+    .s1{left:14%; height:45vh; animation-delay:-1s}
+    .s2{left:34%; height:56vh; animation-delay:-3s}
+    .s3{left:63%; height:48vh; animation-delay:-2s}
+    .s4{left:84%; height:61vh; animation-delay:-4s}
+    @keyframes sway{to{transform:rotate(2deg) translateX(8px)}}
+
+    .wrap{
+      position:relative; z-index:2;
+      width:min(92vw,520px); margin:0 auto;
+      min-height:100vh; display:grid; place-items:center;
+      padding:28px 0 56px;
+    }
+    .screen{
+      width:100%;
+      background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.015));
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:28px;
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(10px);
+      overflow:hidden;
+      opacity:0; transform:translateY(12px) scale(.985);
+      transition:.65s ease;
+      display:none;
+    }
+    .screen.active{display:block; opacity:1; transform:none}
+    .pad{padding:30px 24px 26px}
+    .tiny{
+      font-size:12px; letter-spacing:.06em; color:var(--gold);
+      text-transform:uppercase; margin-bottom:16px; opacity:.9;
+    }
+    h1,h2,p{margin-top:0}
+    h1{font-size:34px; line-height:1.35; margin-bottom:14px}
+    h2{font-size:28px; line-height:1.45; margin-bottom:14px}
+    p{font-size:17px; line-height:1.95; color:#eee8e2}
+    .muted{color:var(--muted)}
+    .heart{
+      width:82px; height:82px; margin:4px auto 22px;
+      display:grid; place-items:center; border-radius:50%;
+      background:radial-gradient(circle,rgba(255,125,150,.22),rgba(255,125,150,.05) 60%,transparent 65%);
+      font-size:34px;
+      animation:pulse 1.8s ease-in-out infinite;
+    }
+    @keyframes pulse{50%{transform:scale(1.07)}}
+    .btn{
+      width:100%; border:0; border-radius:16px; padding:15px 18px;
+      font-weight:700; font-size:16px; cursor:pointer;
+      color:#17141a;
+      background:linear-gradient(135deg,var(--rose2),var(--rose));
+      box-shadow:0 10px 30px rgba(255,125,150,.22);
+      transition:.2s ease;
+    }
+    .btn:active{transform:scale(.985)}
+    .ghost{
+      margin-top:10px; color:var(--text); background:transparent;
+      border:1px solid rgba(255,255,255,.14); box-shadow:none;
+    }
+    .rule{height:1px;background:var(--line);margin:22px 0}
+    .cards{display:grid;gap:11px;margin:18px 0 22px}
+    .mini{
+      padding:14px 15px; border-radius:16px;
+      background:rgba(255,255,255,.035);
+      border:1px solid rgba(255,255,255,.08);
+      font-size:15px; line-height:1.75;
+    }
+    .mini b{color:var(--rose2)}
+    .note{
+      position:relative; margin:12px 0 24px; padding:21px 19px 18px;
+      border-radius:18px;
+      background:#f5eee5; color:#28201f;
+      box-shadow:0 14px 35px rgba(0,0,0,.20);
+      transform:rotate(-1deg);
+    }
+    .note:before{
+      content:""; position:absolute; width:58px;height:18px; top:-8px; left:50%;
+      transform:translateX(-50%) rotate(2deg);
+      background:rgba(240,201,139,.55);
+      border:1px solid rgba(120,90,50,.08);
+    }
+    .note p{color:#322927;font-size:16px;line-height:1.9;margin:0}
+    .signature{font-weight:700;margin-top:14px;color:#6b3d49}
+    .reveal{
+      display:grid; grid-template-rows:0fr; transition:grid-template-rows .7s ease;
+    }
+    .reveal > div{overflow:hidden}
+    .reveal.show{grid-template-rows:1fr}
+    .finale{
+      text-align:center; padding:12px 0 4px;
+    }
+    .biglove{font-size:46px;margin-bottom:8px;animation:pulse 1.6s infinite}
+    .spark{
+      position:fixed; width:7px;height:7px;border-radius:50%;
+      pointer-events:none; z-index:5; background:#fff;
+      animation:fly .9s ease-out forwards;
+    }
+    @keyframes fly{
+      to{transform:translate(var(--x),var(--y)) scale(0);opacity:0}
+    }
+    .footer{font-size:12px;color:#8f8985;text-align:center;margin-top:18px}
+  </style>
+</head>
+<body>
+  <div class="noise"></div>
+  <div class="strings">
+    <span class="string s1"></span><span class="string s2"></span>
+    <span class="string s3"></span><span class="string s4"></span>
+  </div>
+
+  <main class="wrap">
+    <section class="screen active" id="s1">
+      <div class="pad" style="text-align:center">
+        <div class="heart">❤</div>
+        <div class="tiny">رسالة صغيرة معمولة مخصوص ليكي</div>
+        <h1>ممكن آخد منك<br>دقيقة واحدة؟</h1>
+        <p class="muted">مش علشان أبرر… علشان أقولك حاجة كان لازم تتقال بطريقة أحسن.</p>
+        <button class="btn" onclick="go(2)">افتحي الرسالة</button>
+      </div>
+    </section>
+
+    <section class="screen" id="s2">
+      <div class="pad">
+        <div class="tiny">01 — أول حاجة</div>
+        <h2>أنا عارف إني زعلتك.</h2>
+        <p>ومش هحوّل الاعتذار لمحاولة إني أثبت إني صح. لو حاجة مني ضايقتك، فإحساسك مهم عندي قبل أي نقاش.</p>
+        <div class="cards">
+          <div class="mini"><b>أنا غلطت</b> إني خليتك توصلي للإحساس ده.</div>
+          <div class="mini"><b>أنا فاهم</b> إن الاعتذار مش كلمة وخلاص.</div>
+          <div class="mini"><b>وأنا مسؤول</b> إني أصلّح اللي أقدر أصلحه بالفعل، مش بالكلام بس.</div>
+        </div>
+        <button class="btn" onclick="go(3)">كمّلي…</button>
+      </div>
+    </section>
+
+    <section class="screen" id="s3">
+      <div class="pad">
+        <div class="tiny">02 — من غير لف ودوران</div>
+        <h2>أنا آسف.</h2>
+        <div class="note">
+          <p>
+            عارف إن اللي حصل بينا خلاكي تحسي إن الخطوبة نفسها ممكن ما تكملش، وده أكتر إحساس أنا زعلان إني وصلتك له.
+            ومش هطلب منك تطمني لمجرد إني بقول كلام حلو؛ أنا عايز أثبتلك بالأفعال إن اللي جاي أحسن.
+            أنا عارف إني عملت أكتر من مشكلة، وهعمل كل اللي أقدر عليه عشان علاقتنا تبقى أهدى،
+            وعشان تحسي معايا براحة وأمان واطمئنان، مش توتر وخوف.
+            هسمعك أكتر، وهراجع نفسي، وهصلّح غلطاتي بدل ما أسيبها تتكرر.
+            إنتِ غالية عندي جدًا، وأنا متمسك بيكي وباللي بينا، ومش عايز أضغط عليكي؛
+            نفسي بس مع الوقت تشوفي بنفسك إن اللي جاي بينا أحسن.
+          </p>
+          <div class="signature">— خطيبك اللي بيحبك ❤️</div>
+        </div>
+        <button class="btn" onclick="showExtra()">وفي حاجة أخيرة…</button>
+        <div class="reveal" id="extra">
+          <div>
+            <div class="rule"></div>
+            <div class="finale">
+              <div class="biglove">❤</div>
+              <h2 style="font-size:24px">أنا فعلًا غلطان وحقك عليا.<br>أنا بمر بمرحلة ضغط، بس ده مش مبرر، وعايزك تسامحيني.<br>وكل هدفي دلوقتي وبعدين إني أخليكي مرتاحة ومطمنة.</h2>
+              <p class="muted">ولما تكوني جاهزة، أنا موجود أسمعك للآخر من غير دفاع ومن غير مقاطعة.</p>
+              <button class="btn" onclick="celebrate()">عشان إنتِ تستاهلي أحسن يا صفا ❤️</button>
+            </div>
+          </div>
+        </div>
+        <div class="footer">اتعملت مخصوص علشانك يا صفاصيفو ❤️</div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    function go(n){
+      document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+      const target=document.getElementById('s'+n);
+      target.classList.add('active');
+      window.scrollTo({top:0,behavior:'smooth'});
+    }
+    function showExtra(){
+      document.getElementById('extra').classList.add('show');
+      setTimeout(()=>document.getElementById('extra').scrollIntoView({behavior:'smooth',block:'end'}),250);
+    }
+    function celebrate(){
+      const cx=innerWidth/2, cy=innerHeight*.72;
+      for(let i=0;i<34;i++){
+        const p=document.createElement('i');
+        p.className='spark';
+        p.style.left=cx+'px'; p.style.top=cy+'px';
+        const a=Math.random()*Math.PI*2, d=70+Math.random()*150;
+        p.style.setProperty('--x',Math.cos(a)*d+'px');
+        p.style.setProperty('--y',Math.sin(a)*d+'px');
+        p.style.background=Math.random()>.5?'#ff8fa7':'#f0c98b';
+        document.body.appendChild(p);
+        setTimeout(()=>p.remove(),1000);
+      }
+    }
+  </script>
+</body>
+</html>
